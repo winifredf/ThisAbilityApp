@@ -9,7 +9,7 @@ from django.shortcuts import redirect
 def index(request):
     return render(request, 'index.html')
 
-def user_registeration(request):
+def user_registration(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -20,6 +20,6 @@ def user_registeration(request):
             if user is not None:
                 login(request, user)
             return redirect('dashboard')
-        else:
+    else:
             form = UserRegistrationForm()
             return render(request, 'user_registration.html', {'form': form})
