@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from .models import User, Employer, Job
-from .forms import UserRegistrationForm, EmployerRegistrationForm, JobCreationForm
+from .forms import UserRegistrationForm
+from django.shortcuts import redirect
+
 
 # Create your views here.
 
