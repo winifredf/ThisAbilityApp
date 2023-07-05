@@ -21,7 +21,7 @@ class Employer(models.Model):
     address = models.CharField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-class job(models.Model):
+class Job(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     requirements = models.TextField()
