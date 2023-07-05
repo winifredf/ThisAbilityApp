@@ -15,11 +15,11 @@ def user_registration(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            password = form.cleaned_data['password1']
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
             return redirect('dashboard')
     else:
-            form = UserRegistrationForm()
-            return render(request, 'user_registration.html', {'form': form})
+        form = UserRegistrationForm()
+    return render(request, 'user_registration.html', {'form': form})
