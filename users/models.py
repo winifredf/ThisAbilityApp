@@ -24,10 +24,11 @@ class Employer(models.Model):
 class job(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
+    requirements = models.TextField()
     employer = models.ForeignKey(Employer, on_delete=models.CASCADE)
     salary = models.PositiveIntegerField()
     location = models.CharField(max_length=100)
     date = models.DateTimeField()
-    
+
 
 
