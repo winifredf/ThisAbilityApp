@@ -12,6 +12,9 @@ class User(models.Model):
     password = models.CharField(max_length=200)
     abilities = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 class Employer(models.Model):
     name = models.CharField(max_length=100)
     requirements = models.TextField()
@@ -20,6 +23,9 @@ class Employer(models.Model):
     phone = models.CharField(max_length=20)
     address = models.CharField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 class Job(models.Model):
     title = models.CharField(max_length=100)
@@ -30,5 +36,6 @@ class Job(models.Model):
     location = models.CharField(max_length=100)
     date = models.DateTimeField()
 
-
+def __str__(self):
+        return self.title
 
