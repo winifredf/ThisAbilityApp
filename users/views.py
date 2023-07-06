@@ -9,7 +9,7 @@ from django.shortcuts import redirect
 def index(request):
     return render(request, 'This_Ability_App/index.html')
 
-def user_registration(request):
+#def user_registration(request):
     #if request.method == 'POST':
         #form = UserRegistrationForm(request.POST)
         #if form.is_valid():
